@@ -44,7 +44,7 @@ int main() {
     }
 
     //calls insertion and selection sort function
-    insertionSort(test, size );
+    insertionSort(test, size);
     selectionSort(test, size);
 
     // prints the elements in the array after sorted
