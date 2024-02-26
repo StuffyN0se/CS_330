@@ -30,14 +30,14 @@ void selectionSort(int array[], int size)
 
             for (int j = i + 1; j < size; j++){
                 if (*(array + j)  < *(array + minValue))
-                    minValue = j;
-                if (minValue != i)
-                    {
-                        int temp = *(array + i);
-                        array[i] = *(array + minValue);
-                        array[minValue] = temp;
-                    }
+                        minValue = j;
             }
+            if (minValue != i)
+                {
+                    int temp = *(array + i);
+                    array[i] = *(array + minValue);
+                    array[minValue] = temp;
+                }
         }
     }
 
