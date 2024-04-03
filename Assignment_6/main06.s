@@ -2,7 +2,7 @@
 .data
 
 #constants and strings here
-.section
+.section .rodata
 
 multString: .string "The answer is %d\n"
 
@@ -16,9 +16,8 @@ multiByFive:
      
      pushq % rbx
      movq %rdi, %rax
-     move $5, rbx
-     lmulq %rbx
-
+     movq $5, %rbx
+     mul %rbx
      popq %rbx
      ret
 
@@ -28,9 +27,16 @@ movq %rsp, %rbp
 
 #=====code below=======
 
-movq $4, %rax
-movq $8, %rbx
+movq $4, %rdi
+call multiByFive
 
 movq $multString, %rdi
 movq %rax, %rsi
 call printf
+
+
+movq $0, %rax
+popq %rbp
+ret
+
+
