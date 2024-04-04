@@ -96,11 +96,7 @@ movq %rax, %rsi             #stores value of rax (the solution) into rsi for pri
 movq $0, %rax               #clears rax
 call printf                 #calls print function
 
-popq %rbx                   #final pop to remove rax and rbx from stack
-popq %rax
-
 #====close====
 movq $0, %rax               #moves 0 into rax (clears rax)
-popq %rbp                   #pops base pointer from stack
 leave                       #cleans up stack and restores it to orginal
 ret                         #return
