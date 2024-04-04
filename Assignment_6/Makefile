@@ -1,4 +1,4 @@
-FILE = HW06
+FILE = Asgn6
 build: $(FILE).s
 	gcc -Wall -g $(FILE).s -o $(FILE) -lm -fno-pie -no-pie
 
